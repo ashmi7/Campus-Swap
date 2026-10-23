@@ -40,6 +40,15 @@ const demoListings=[
 {id:"d5",name:"Intro to Programming Notes",category:"Books",type:"Free",price:0,seller:"Ananya",email:"ananya@example.com",description:"Printed notes and quick revision sheets for beginners.",emoji:"📝",visual:"books",demo:true},
 {id:"d6",name:"Headphones — wired",category:"Electronics",type:"Swap",price:0,seller:"Dev",email:"dev@example.com",description:"Works well. Open to swapping for a USB drive or notebook set.",emoji:"🎧",visual:"tech",demo:true}
 ];
+  
+const SUPABASE_URL = "PASTE_YOUR_PROJECT_URL_HERE";https://xpodslyqlutgvqbtpdif.supabase.co
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";sb_publishable_titDwQ5yT4vgnwDJBX6xZQ_26bfbzWP
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
 const STORE="campusswap-listings-v1";let activeCategory="All",listings=[];
 try{const saved=JSON.parse(localStorage.getItem(STORE)||"[]");listings=[...saved,...demoListings]}catch(e){listings=[...demoListings]}
 const grid=document.getElementById("listingGrid"),search=document.getElementById("search"),typeFilter=document.getElementById("typeFilter"),sortFilter=document.getElementById("sortFilter");
